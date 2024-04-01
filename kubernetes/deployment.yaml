@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deploymenthow to
+metadata:
+  name: nodejs-app
+  labels:
+    app: nodejs-app
+spec:
+  replicas: 2   #Number of pods to run
+  selector:
+    matchLabels:
+      app: nodejs-app
+  template:
+    metadata:
+      name: nodejs-app
+      labels:
+        app: nodejs-app
+    spec:
+      containers:
+      - name: nodejs-app
+        image: adiyaochir/version2:latest    #Docker image to be used, it has to be pulled from Docker Hub
+        ports:
+        - containerPort: 3000       #Port on which container listens

@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nodejs-app
+spec:
+  selector:
+    app: nodejs-app
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 3000      #target port has to be same as containerPort in deployment.yaml
+  type: LoadBalancer       #Reason why i am using LoadBalancer is cause i am going to deploy this on cloud 

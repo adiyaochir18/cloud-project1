@@ -31,6 +31,7 @@ app.post('/submit-action', (req, res) => {
 });
 
 // Start the server
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, function() {
+  console.log(`Server running on http://0.0.0.0:${PORT}`);
 });
